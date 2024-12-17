@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Program Editor</h2>
+<form method='POST' enctype='multipart/form-data'>
+    {% csrf_token %}
+    <label>Upload Content:</label>
+    <input type='file' name='file'>
+    <button type='submit'>Submit</button>
+</form>
+{% endblock %}

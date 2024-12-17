@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Device Status</h2>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Device ID</th>
+        <th>Last Connected</th>
+        <th>Status</th>
+    </tr>
+    {% for device in devices %}
+    <tr>
+        <td>{{ device.name }}</td>
+        <td>{{ device.device_id }}</td>
+        <td>{{ device.last_connected }}</td>
+        <td>{{ device.status|yesno:"Online,Offline" }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
